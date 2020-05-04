@@ -7,12 +7,12 @@ on:
     types: [opened]
     branches: [ master, devel-actions ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  assign:
+  assign-reviewers:
     runs-on: ubuntu-latest
     steps:
-    - uses: rowi1de/auto-assign-review-teams@v1.0.0
+    - name: "Assign Team and Persons"
+      uses: rowi1de/auto-assign-review-teams@v0.0.6
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        teams: test-team
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        teams: "test-team"
