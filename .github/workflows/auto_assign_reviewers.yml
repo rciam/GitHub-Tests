@@ -1,0 +1,20 @@
+name: Automatically assign reviewers
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  pull_request:
+    types: [opened]
+    branches: [ master, devel ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Assign Review Teams
+      - uses: shufo/auto-assign-reviewer-by-issuer@v1.0.0
+        with:
+          config: '.github/reviewers.yml'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          teams: test-team
