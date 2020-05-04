@@ -12,8 +12,7 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto Assign Review Teams
-        uses: rowi1de/auto-assign-review-teams@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          teams: test-team
+    - uses: rowi1de/auto-assign-review-teams@v1.0.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        teams: test-team
