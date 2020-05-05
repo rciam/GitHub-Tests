@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Assign Team and Persons"
-      uses: rowi1de/auto-assign-review-teams@v1.0.0
+      uses: nikosmoum/auto-assign-reviewer-team@v0.5
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        teams: "test-team"
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        teamName: 'test-team'
